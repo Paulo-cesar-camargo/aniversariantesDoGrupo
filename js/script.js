@@ -19,7 +19,7 @@ const aniversariantes = [
   { nome: "João do Nascimento ", cargo: "Diacono e lider dos varoes", msg: "Feliz aniversario varão valoroso", data: "24/11/1975", foto: "img/joaoLider.png" },
   { nome: "Thaide Cassiano ", cargo: "Sonoplasta", msg: "Feliz aniversario varão valoroso", data: " 09/03/1995", foto: "img/base.jpeg" },
   { nome: "Edilson Sousa Cunha", cargo: "Pastor", msg: "Feliz aniversario meu pastor ", data: "28/12", foto: "img/pastorEdilson.png" },
-  { nome: "Cristiano", cargo: "Pastor ", msg: "Feliz aniversario pastor cristiano ", data: "15/08", foto: "img/cristiano.png" },
+  { nome: "Cristiano", cargo: "Pastor ", msg: "Feliz aniversario pastor cristiano ", data: "15/02", foto: "img/cristiano.png" },
   
 ];
 
