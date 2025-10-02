@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Aniversariantes</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+    h1 { text-align: center; }
+    form { max-width: 400px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.2); }
+    label { display: block; margin-top: 10px; font-weight: bold; }
+    input { width: 100%; padding: 8px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+    button { margin-top: 15px; padding: 10px; width: 100%; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    .resultado { margin-top: 20px; padding: 15px; background: #e8f5e9; border-left: 4px solid #4CAF50; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de Aniversariantes</h1>
+  <form id="formCadastro">
+    <label>Nome:</label>
+    <input type="text" id="nome" required>
+    <label>Cargo:</label>
+    <input type="text" id="cargo" required>
+    <label>Msg:</label>
+    <input type="text" id="msg" required>
+    <label>Data (dd/mm):</label>
+    <input type="text" id="data" placeholder="Ex: 15/04" required>
+    <label>Foto (caminho ou URL):</label>
+    <input type="text" id="foto" placeholder="Ex: img/maria.jpg" required>
+    <button type="submit">Gerar Código</button>
+  </form>
+  <div class="resultado" id="saida"></div>
+
+  <script>
+    document.getElementById("formCadastro").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const cargo = document.getElementById("cargo").value;
+      const msg = document.getElementById("msg").value;
+      const data = document.getElementById("data").value;
+      const foto = document.getElementById("foto").value;
+      const codigo = `{ nome: "${nome}", cargo: "${cargo}", msg: "${msg}", data: "${data}", foto: "${foto}" }`;
+      document.getElementById("saida").textContent = "👉 Copie e cole no array 'aniversariantes' do script.js:\n\n" + codigo;
+    });
+  </script>
+</body>
+</html>
