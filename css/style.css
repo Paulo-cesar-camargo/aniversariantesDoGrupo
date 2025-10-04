@@ -122,6 +122,7 @@ main {
 }
 .downloadBtn {
   background-color: #4CAF50; /* verde */
-  
+  border-radius: 50%; /* deixa arredondado */
+  margin-top: 10px;
 }
 
