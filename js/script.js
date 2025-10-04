@@ -20,7 +20,7 @@ const aniversariantes = [
   { nome: "Thaide Cassiano", cargo: "Sonoplasta", msg: "Feliz aniversario varão valoroso", data: "09/03/1995", foto: "img/base.jpg" },
   { nome: "Edilson Souza Cunha", cargo: "Pastor", msg: "Feliz aniversario meu pastor", data: "28/12", foto: "img/pastorEdilson.png" },
   { nome: "Cristiano", cargo: "Pastor", msg: "Feliz aniversario pastor cristiano", data: "15/02", foto: "img/cristiano.png" },
-  { nome: "Joaquim", cargo: "Integrante do Grupo", msg: "Feliz aniversário varão valoroso", data: ".", foto: "img/joaquin.jpg" }
+  { nome: "Joaquim", cargo: "Integrante dos Gideões", msg: "Feliz aniversário varão valoroso", data: "dd/mm/aaaa", foto: "img/joaquin.jpg" }
 ];
 
 const container = document.getElementById("container");
