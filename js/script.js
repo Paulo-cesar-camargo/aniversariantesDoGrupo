@@ -96,3 +96,16 @@ function fecharImagem(event) {
     modal.style.display = "none";
   }
 }
+// Adiciona evento de download para cada card
+document.querySelectorAll('.downloadBtn').forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    const card = btn.parentElement; // pega o card pai
+    html2canvas(card).then(canvas => {
+      const link = document.createElement('a');
+      link.download = `aniversariante-${index + 1}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  });
+});
+
