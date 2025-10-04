@@ -4,19 +4,77 @@ body {
   margin: 0;
   padding: 0;
 }
+
 header {
   background: #4CAF50;
   color: white;
   padding: 20px;
   text-align: center;
 }
-h1 { margin: 0 0 15px 0; }
-.filtros { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-.filtros select, .filtros input { padding: 8px; border-radius: 5px; border: none; font-size: 14px; }
-main { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-.card { background: white; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); overflow: hidden; transition: transform 0.2s ease-in-out; text-align: center; }
-.card:hover { transform: scale(1.03); }
-.card img { width: 100%; height: 180px; object-fit: cover; }
-.card h2 { margin: 10px 0 5px; font-size: 1.2em; }
-.card p { margin: 5px 0; color: #555; }
-.destacado { border: 2px solid #ff9800; box-shadow: 0 0 12px rgba(255,152,0,0.7); }
+
+h1 {
+  margin: 0 0 15px 0;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filtros select, .filtros input {
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* 🔧 Correção para exibir as imagens completas e responsivas */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background-color: #f0f0f0; /* opcional: fundo neutro para imagens menores */
+  border-bottom: 1px solid #ddd;
+}
+
+.card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.destacado {
+  border: 2px solid #ff9800;
+  box-shadow: 0 0 12px rgba(255,152,0,0.7);
+}
+
