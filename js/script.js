@@ -21,7 +21,7 @@ const aniversariantes = [
   { nome: "Edilson Souza Cunha", cargo: "Pastor", msg: "Feliz aniversario meu pastor 🙏 “ Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "28/12", foto: "img/pastorEdilson.png" },
   { nome: "Cristiano", cargo: "Pastor", msg: "Feliz aniversario pastor cristiano 🙏 “ Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "15/02", foto: "img/cristiano.png" },
   { nome: "Joaquim", cargo: "Integrante dos Gideões", msg: "🙏 “Feliz aniversário! Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "dd/mm/aaaa", foto: "img/joaquin.jpg" },
-  { nome: "Josué", cargo: "Presbitero", msg: "🙏 “Feliz aniversário! Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "dd/mm/aaaa", foto: "img/josue.jpeg" }
+  { nome: "Josué", cargo: "Presbitero", msg: "🙏 “Feliz aniversário! Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "dd/mm/aaaa", foto: "img/josué.jpeg" }
 ];
 
 const container = document.getElementById("container");
