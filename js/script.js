@@ -6,7 +6,7 @@ const aniversariantes = [
   { nome: "Alexsandro Henrique Soares", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "09/04", foto: "img/alexandre.jpg" },
   { nome: "José Raimundo de santo", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "08/67", foto: "img/base.jpg" },
   { nome: "André Almeida Ribeiro", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "21/09/84", foto: "img/andre.png" },
-  { nome: "Ueverson André de Oliveira", cargo: "Cooperador", msg: "Feliz aniversario varão valoroso", data: "10/10/1981", foto: "img/ueverson.jpg" },
+  { nome: "Ueverson André de Oliveira", cargo: "Cooperador", msg: "Feliz aniversario varão valoroso", data: "10/10/1981", foto: "img/ueversom.jpg" },
   { nome: "Paulo Castesiano de Oliveira", cargo: "Diacono e lider dos varoes", msg: "Feliz aniversario varão valoroso", data: "15/08/1984", foto: "img/pauloDiacono.jpeg" },
   { nome: "Adailson da Silva Castro", cargo: "Presbitero", msg: "Feliz aniversario varão valoroso", data: "04/04/82", foto: "img/base.jpg" },
   { nome: "Wasley Santos Pereira", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "16/09/1984", foto: "img/wasley.png" },
