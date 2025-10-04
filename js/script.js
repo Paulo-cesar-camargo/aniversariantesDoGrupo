@@ -36,7 +36,8 @@ function renderizar(lista, termoBusca = "") {
       card.classList.add("destacado");
     }
     card.innerHTML = `
-      <img src="${pessoa.foto}" alt="${pessoa.nome}">
+      <img src="${pessoa.foto}" alt="${pessoa.nome}" onclick="abrirImagem(this)">
+      /*<img src="${pessoa.foto}" alt="${pessoa.nome}">*/
       <h2>${pessoa.nome}</h2>
       <p>${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
@@ -63,3 +64,18 @@ busca.addEventListener("input", () => {
 });
 
 renderizar(aniversariantes);
+/* ===== Modal da imagem ===== */
+function abrirImagem(imgElement) {
+  const modal = document.getElementById("modalImagem");
+  const imgAmpliada = document.getElementById("imgAmpliada");
+  modal.style.display = "block";
+  imgAmpliada.src = imgElement.src;
+}
+
+function fecharImagem(event) {
+  const modal = document.getElementById("modalImagem");
+  if (event.target === modal || event.target.classList.contains("fechar")) {
+    modal.style.display = "none";
+  }
+}
+💡 Como testar
