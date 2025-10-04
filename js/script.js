@@ -10,7 +10,7 @@ const aniversariantes = [
   { nome: "Paulo Castesiano de Oliveira", cargo: "Diacono e lider dos varoes", msg: "Feliz aniversario varão valoroso", data: "15/08/1984", foto: "img/pauloc.png" },
   { nome: "Adailson da Silva Castro", cargo: "Presbitero", msg: "Feliz aniversario varão valoroso", data: "04/04/82", foto: "img/base.jpeg" },
   { nome: "Wasley Santos Pereira", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "16/09/1984", foto: "img/wasley.png" },
-  { nome: "Eliezer Francisco de Paula", cargo: "Cooperador", msg: "Feliz aniversario varão valoroso", data: "04/09/1977", foto: "img/base.jpeg" },
+  { nome: "Eliezer Francisco de Paula", cargo: "Cooperador", msg: "Feliz aniversario varão valoroso", data: "04/09/1977", foto: "img/eliazer.jpg" },
   { nome: "Genivaldo", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "03/05/1983", foto: "img/genivaldo.png" },
   { nome: "Manoel Alecrim", cargo: "Integrante dos Gideões", msg: "Feliz aniversario varão valoroso", data: "12/10/66", foto: "img/base.jpeg" },
   { nome: "Natanael ribeiro arruda", cargo: "Presbitero", msg: "Feliz aniversario varão valoroso", data: "07/01/1984", foto: "img/nat1.jpg" },
@@ -19,7 +19,8 @@ const aniversariantes = [
   { nome: "João do Nascimento", cargo: "Diacono e lider dos varoes", msg: "Feliz aniversario varão valoroso", data: "24/11/1975", foto: "img/joaoLider.png" },
   { nome: "Thaide Cassiano", cargo: "Sonoplasta", msg: "Feliz aniversario varão valoroso", data: "09/03/1995", foto: "img/base.jpeg" },
   { nome: "Edilson Souza Cunha", cargo: "Pastor", msg: "Feliz aniversario meu pastor", data: "28/12", foto: "img/pastorEdilson.png" },
-  { nome: "Cristiano", cargo: "Pastor", msg: "Feliz aniversario pastor cristiano", data: "15/02", foto: "img/cristiano.png" }
+  { nome: "Cristiano", cargo: "Pastor", msg: "Feliz aniversario pastor cristiano", data: "15/02", foto: "img/cristiano.png" },
+  { nome: "Joaquim", cargo: "Integrante do Grupo", msg: "Feliz aniversário varão valoroso", data: ".", foto: "img/joaquin.jpg" }
 ];
 
 const container = document.getElementById("container");
