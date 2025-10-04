@@ -45,6 +45,7 @@ function renderizar(lista, termoBusca = "") {
       <p>${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
       <p>🎂 ${pessoa.data}</p>
+      <button class="downloadBtn">📥 Baixar</button>
     `;
     container.appendChild(card);
   });
