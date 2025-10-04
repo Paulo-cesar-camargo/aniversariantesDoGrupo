@@ -44,8 +44,8 @@ function renderizar(lista, termoBusca = "") {
       <h2>${pessoa.nome}</h2>
       <p>${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
-      <p>🎂 ${pessoa.data}</p>
-      <button class="downloadBtn">📥 Baixar</button>
+      <p>🎂 ${pessoa.data}🎂</p>
+      <button class="downloadBtn">Baixar</button>
     `;
     container.appendChild(card);
   });
