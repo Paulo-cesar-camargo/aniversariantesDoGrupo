@@ -110,4 +110,48 @@ document.querySelectorAll('.downloadBtn').forEach((btn, index) => {
     });
   });
 });
+function explosaoFogos(card) {
+  const canvas = card.querySelector(".fogosCanvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = card.offsetWidth;
+  canvas.height = card.offsetHeight;
+
+  const particulas = [];
+
+  // Criar partículas iniciais
+  for (let i = 0; i < 50; i++) {
+    particulas.push({
+      x: canvas.width / 2,
+      y: canvas.height / 2,
+      vx: (Math.random() - 0.5) * 6,
+      vy: (Math.random() - 0.5) * 6,
+      alpha: 1,
+      size: Math.random() * 3 + 2,
+      color: `hsl(${Math.random()*360}, 100%, 50%)`
+    });
+  }
+
+  function animar() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particulas.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.alpha -= 0.02;
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+      ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    // remover partículas invisíveis
+    if (particulas.some(p => p.alpha > 0)) {
+      requestAnimationFrame(animar);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  animar();
+}
 
