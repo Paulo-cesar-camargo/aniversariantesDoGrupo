@@ -24,6 +24,7 @@ const aniversariantes = [
   { nome: "Josué", cargo: "Presbitero", msg: "🙏 “Feliz aniversário! Que Deus te conceda força, coragem e sabedoria para enfrentar desafios, e que você continue sendo luz e inspiração para todos ao redor.”", data: "dd/mm/aaaa", foto: "img/josué.jpeg" }
 ];
 
+
 const container = document.getElementById("container");
 const mesFiltro = document.getElementById("mesFiltro");
 const busca = document.getElementById("busca");
@@ -31,11 +32,11 @@ const busca = document.getElementById("busca");
 // Função para renderizar os cards
 function renderizar(lista, termoBusca = "") {
   container.innerHTML = "";
+
   lista.forEach(pessoa => {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    // Destacar se corresponder ao termo de busca
     if (termoBusca && pessoa.nome.toLowerCase().includes(termoBusca.toLowerCase())) {
       card.classList.add("destacado");
     }
@@ -45,11 +46,29 @@ function renderizar(lista, termoBusca = "") {
       <h2>${pessoa.nome}</h2>
       <p>${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
-      <p>🎂 ${pessoa.data}🎂</p>
-      <button class="downloadBtn">Baixar</button>
+      <p>🎂 ${pessoa.data} 🎂</p>
+      <button class="downloadBtn">📥</button>
       <canvas class="fogosCanvas"></canvas>
     `;
+
     container.appendChild(card);
+
+    // Download do card
+    const downloadBtn = card.querySelector('.downloadBtn');
+    downloadBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      html2canvas(card).then(canvas => {
+        const link = document.createElement('a');
+        link.download = `${pessoa.nome}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    });
+
+    // Explosão de fogos ao clicar no card
+    card.addEventListener("click", () => {
+      explosaoFogos(card);
+    });
   });
 }
 
@@ -57,10 +76,7 @@ function renderizar(lista, termoBusca = "") {
 mesFiltro.addEventListener("change", () => {
   const mes = mesFiltro.value;
   const filtrados = mes
-    ? aniversariantes.filter(p => {
-        const partes = p.data.trim().split("/");
-        return partes[1] === mes;
-      })
+    ? aniversariantes.filter(p => p.data.trim().split("/")[1] === mes)
     : aniversariantes;
   renderizar(filtrados, busca.value);
 });
@@ -69,14 +85,9 @@ mesFiltro.addEventListener("change", () => {
 busca.addEventListener("input", () => {
   const termo = busca.value.toLowerCase();
   const mes = mesFiltro.value;
-  let filtrados = aniversariantes.filter(p =>
-    p.nome.toLowerCase().includes(termo)
-  );
+  let filtrados = aniversariantes.filter(p => p.nome.toLowerCase().includes(termo));
   if (mes) {
-    filtrados = filtrados.filter(p => {
-      const partes = p.data.trim().split("/");
-      return partes[1] === mes;
-    });
+    filtrados = filtrados.filter(p => p.data.trim().split("/")[1] === mes);
   }
   renderizar(filtrados, termo);
 });
@@ -98,18 +109,8 @@ function fecharImagem(event) {
     modal.style.display = "none";
   }
 }
-// Adiciona evento de download para cada card
-document.querySelectorAll('.downloadBtn').forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    const card = btn.parentElement; // pega o card pai
-    html2canvas(card).then(canvas => {
-      const link = document.createElement('a');
-      link.download = `aniversariante-${index + 1}.png`;
-      link.href = canvas.toDataURL('image/png');
-      link.click();
-    });
-  });
-});
+
+// Função de explosão de fogos
 function explosaoFogos(card) {
   const canvas = card.querySelector(".fogosCanvas");
   const ctx = canvas.getContext("2d");
@@ -117,8 +118,6 @@ function explosaoFogos(card) {
   canvas.height = card.offsetHeight;
 
   const particulas = [];
-
-  // Criar partículas iniciais
   for (let i = 0; i < 50; i++) {
     particulas.push({
       x: canvas.width / 2,
@@ -127,7 +126,7 @@ function explosaoFogos(card) {
       vy: (Math.random() - 0.5) * 6,
       alpha: 1,
       size: Math.random() * 3 + 2,
-      color: `hsl(${Math.random()*360}, 100%, 50%)`
+      color: `hsl(${Math.random() * 360}, 100%, 50%)`
     });
   }
 
@@ -140,11 +139,11 @@ function explosaoFogos(card) {
       ctx.fillStyle = p.color;
       ctx.globalAlpha = p.alpha;
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
       ctx.fill();
     });
     ctx.globalAlpha = 1;
-    // remover partículas invisíveis
+
     if (particulas.some(p => p.alpha > 0)) {
       requestAnimationFrame(animar);
     } else {
@@ -154,4 +153,5 @@ function explosaoFogos(card) {
 
   animar();
 }
+
 
