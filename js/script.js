@@ -44,7 +44,7 @@ function renderizar(lista, termoBusca = "") {
     card.innerHTML = `
       <img src="${pessoa.foto}" alt="${pessoa.nome}" onclick="abrirImagem(this)">
       <h2>${pessoa.nome}</h2>
-      <p>${pessoa.cargo}</p>
+      <p class="cargo">${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
       <p>🎂 ${pessoa.data} 🎂</p>
       <button class="downloadBtn">Baixar</button>
