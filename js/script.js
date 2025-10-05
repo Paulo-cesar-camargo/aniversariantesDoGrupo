@@ -47,7 +47,7 @@ function renderizar(lista, termoBusca = "") {
       <p>${pessoa.cargo}</p>
       <p>${pessoa.msg}</p>
       <p>🎂 ${pessoa.data} 🎂</p>
-      <button class="downloadBtn">📥</button>
+      <button class="downloadBtn">Baixar</button>
       <canvas class="fogosCanvas"></canvas>
     `;
 
