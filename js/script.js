@@ -118,7 +118,7 @@ function explosaoFogos(card) {
   canvas.height = card.offsetHeight;
 
   const particulas = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 0; i < 500; i++) {
     particulas.push({
       x: canvas.width / 2,
       y: canvas.height / 2,
