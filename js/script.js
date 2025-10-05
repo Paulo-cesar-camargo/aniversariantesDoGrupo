@@ -47,6 +47,7 @@ function renderizar(lista, termoBusca = "") {
       <p>${pessoa.msg}</p>
       <p>🎂 ${pessoa.data}🎂</p>
       <button class="downloadBtn">Baixar</button>
+      <canvas class="fogosCanvas"></canvas>
     `;
     container.appendChild(card);
   });
